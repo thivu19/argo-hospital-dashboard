@@ -1,5 +1,13 @@
+import { themes } from '@storybook/theming';
 import * as NextImage from 'next/image';
 import '../styles/globals.css';
+
+// or global addParameters
+export const parameters = {
+  docs: {
+    theme: themes.dark,
+  },
+};
 
 const BREAKPOINTS_INT = {
   xs: 375,
