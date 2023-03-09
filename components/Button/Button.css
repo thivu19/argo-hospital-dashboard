@@ -1,0 +1,19 @@
+.button {
+    color:whites;
+    background-color: #3050F8;
+    border: none;
+    padding: .8em 1em;
+    border-radius: .2rem;
+    border: 2px solid #202020;
+}
+
+.red{
+    background-color: red;
+}
+
+.button:hover,
+.button:focus {
+cursor: pointer;
+background-color: #1c2d85;
+color: red;
+}
