@@ -7,6 +7,12 @@ export default {
   component: Button_MUI,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {},
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/J6poyIak1EygqUcGFQNCuY/UTD-BHCC-Design-Library?node-id=935%3A2224&t=MdYOKVzAq88FRHW4-1'
+    }
+  }
 } as ComponentMeta<typeof Button_MUI>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
