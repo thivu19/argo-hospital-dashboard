@@ -1,4 +1,5 @@
 import { themes } from '@storybook/theming';
+import { RouterContext } from 'next/dist/shared/lib/router-context';
 import * as NextImage from 'next/image';
 import '../styles/globals.css';
 
@@ -6,6 +7,9 @@ import '../styles/globals.css';
 export const parameters = {
   docs: {
     theme: themes.dark,
+  },
+  nextRouter: {
+    Provider: RouterContext.Provider,
   },
 };
 
