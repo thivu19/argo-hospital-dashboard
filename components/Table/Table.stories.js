@@ -34,3 +34,16 @@ Filled.args = {
     ],
     headers: ['Patient Name', 'Chart #', 'Provider', 'Insurance'],
 };
+
+export const Padded = Template.bind({});
+Padded.args = {
+    rows: [
+        ['Data text / #', 'Data text / #', 'Data text / #', 'Data text / #', 'Data text / #',],
+        ['Data text / #', 'Data text / #', 'Data text / #', 'Data text / #', 'Data text / #',],
+        ['Data text / #', 'Data text / #', 'Data text / #', 'Data text / #', 'Data text / #',],
+        ['Data text / #', 'Data text / #', 'Data text / #', 'Data text / #', 'Data text / #',],
+    ],
+    headers: ['Header', 'Header', 'Header', 'Header', 'Header'],
+    cellPadding: 'small',
+    headerBackgroundColor: '#16abff33',
+};
