@@ -9,7 +9,7 @@ import styles from './Table.css';
 export const Table = ({
     rows,
     headers,
-    borderWidth = 'thin',
+    borderWidth = 'none',
     cellPadding = 'medium',
     cellTextColor = '#595959',
     headerTextColor = '#202020',
@@ -37,6 +37,7 @@ export const Table = ({
 
     // Not really needed since it doesn't change, so consider not mapping it
     const borderWidthMap = {
+        none: '0px',
         thin: '1px',
         medium: '5px',
         thick: '10px',
@@ -52,7 +53,7 @@ export const Table = ({
                 color: headerTextColor,
                 padding: cellPaddingMap[cellPadding],
                 backgroundColor: headerBackgroundColor,
-                //border: `${borderWidthMap[borderWidth]} solid ${headerBorderColor}`,
+                border: `${borderWidthMap[borderWidth]} solid ${headerBorderColor}`,
                 bordertop: `${borderWidthMap[borderWidth]} solid ${cellBorderColor}`,
               }}
             >
@@ -68,7 +69,7 @@ export const Table = ({
                     color: cellTextColor,
                     backgroundColor: backgroundColor,
                     padding: cellPaddingMap[cellPadding],
-                    //border: `${borderWidthMap[borderWidth]} solid ${cellBorderColor}`,
+                    border: `${borderWidthMap[borderWidth]} solid ${cellBorderColor}`,
                     bordertop: `${borderWidthMap[borderWidth]} solid ${cellBorderColor}`,
                   }}
                 >
@@ -89,7 +90,7 @@ Table.propTypes = {
     backgroundColor: PropTypes.string,
     headerBorderColor: PropTypes.string,
     headerBackgroundColor: PropTypes.string,
-    borderWidth: PropTypes.oneOf(['thin', 'medium', 'thick']),
+    borderWidth: PropTypes.oneOf(['none', 'thin', 'medium', 'thick']),
     cellPadding: PropTypes.oneOf(['small', 'medium', 'large']),
     headers: PropTypes.arrayOf(PropTypes.string).isRequired,
     rows: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
