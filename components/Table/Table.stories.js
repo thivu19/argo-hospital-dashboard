@@ -9,6 +9,12 @@ export default {
         rows: { control: '' },
         headers: { control: '' }
     },
+    parameters: {
+        design: {
+          type: 'figma',
+          url: 'https://www.figma.com/file/J6poyIak1EygqUcGFQNCuY/UTD-BHCC-Design-Library?node-id=1030%3A12105&t=Sdmd46PppyP0YkoH-1'
+        }
+      }
 };
 
 const Template = (args) => <Table {...args} />;
@@ -35,8 +41,8 @@ Filled.args = {
     headers: ['Patient Name', 'Chart #', 'Provider', 'Insurance'],
 };
 
-export const Padded = Template.bind({});
-Padded.args = {
+export const SmallPadded = Template.bind({});
+SmallPadded.args = {
     rows: [
         ['Data text / #', 'Data text / #', 'Data text / #', 'Data text / #', 'Data text / #',],
         ['Data text / #', 'Data text / #', 'Data text / #', 'Data text / #', 'Data text / #',],
@@ -45,5 +51,4 @@ Padded.args = {
     ],
     headers: ['Header', 'Header', 'Header', 'Header', 'Header'],
     cellPadding: 'small',
-    headerBackgroundColor: '#16abff33',
 };
