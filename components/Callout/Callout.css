@@ -1,0 +1,142 @@
+.grey {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 8px;
+
+    position: absolute;
+    max-width: 800px;
+    height: 44px;
+    left: 20px;
+    top: 212px;
+
+    background: #EBEBEB;
+    border-radius: 8px;
+
+    /* Body 2 */
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+
+
+    /* Neutrals/Medium Emphasis */
+
+    color: #595959;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.green  {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 8px;
+
+    position: absolute;
+    max-width: 800px;
+    height: 44px;
+    left: 20px;
+    top: 212px;
+
+    background: #D7FBDF;
+    border-radius: 8px;
+
+    /* Body 2 */
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+
+    color: #0B6A09;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.orange {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 8px;
+
+    position: absolute;
+    max-width: 800px;
+    height: 44px;
+    left: 20px;
+    top: 212px;
+
+    background: #FFF0DB;
+    border-radius: 8px;
+
+    /* Body 2 */
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+
+    color: #9E5000;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.red {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 8px;
+
+    position: absolute;
+    max-width: 800px;
+    height: 44px;
+    left: 20px;
+    top: 212px;
+
+    background: #FFE4E4;
+    border-radius: 8px;
+
+    /* Body 2 */
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+
+    color: #C62828;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
