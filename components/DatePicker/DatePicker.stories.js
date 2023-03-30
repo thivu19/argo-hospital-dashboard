@@ -18,3 +18,9 @@ export const WithInput  = () => (
       <StaticDatePicker />
     </LocalizationProvider>
 );
+
+export const Disabled  = () => (
+  <LocalizationProvider dateAdapter={AdapterDayjs}>
+    <StaticDatePicker label="disabled" disabled  />
+  </LocalizationProvider>
+);
