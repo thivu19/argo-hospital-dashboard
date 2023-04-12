@@ -7,44 +7,48 @@ import { NextPageWithLayout } from './page';
 
 const options: Highcharts.Options = {
   chart: {
-    type: 'bar'
+    type: 'bar',
   },
   title: {
-    text: 'Patient Wait Time'
+    text: 'Patient Wait Time',
   },
   xAxis: {
-    categories: ['2020/21', '2019/20', '2018/19', '2017/18', '2016/17']
+    categories: ['2020/21', '2019/20', '2018/19', '2017/18', '2016/17'],
   },
   yAxis: {
     min: 0,
     title: {
-      text: 'Time (hour)'
-    }
+      text: 'Time (hour)',
+    },
   },
   legend: {
-    reversed: true
+    reversed: true,
   },
   plotOptions: {
     series: {
       stacking: 'normal',
       dataLabels: {
-        enabled: true
-      }
-    }
+        enabled: true,
+      },
+    },
   },
-  series: [{
-    name: 'Cristiano Ronaldo',
-    type: 'bar',
-    data: [4, 4, 6, 15, 12]
-  }, {
-    name: 'Lionel Messi',
-    type: 'bar',
-    data: [5, 3, 12, 6, 11]
-  }, {
-    name: 'Robert Lewandowski',
-    type: 'bar',
-    data: [5, 15, 8, 5, 8]
-  }]
+  series: [
+    {
+      name: 'Cristiano Ronaldo',
+      type: 'bar',
+      data: [4, 4, 6, 15, 12],
+    },
+    {
+      name: 'Lionel Messi',
+      type: 'bar',
+      data: [5, 3, 12, 6, 11],
+    },
+    {
+      name: 'Robert Lewandowski',
+      type: 'bar',
+      data: [5, 15, 8, 5, 8],
+    },
+  ],
 };
 
 const Hospital: NextPageWithLayout = (props: HighchartsReact.Props) => {
@@ -52,9 +56,7 @@ const Hospital: NextPageWithLayout = (props: HighchartsReact.Props) => {
 
   return (
     <section className="bg-gradient-to-r from-cyan-500 to-blue-500">
-      <h1>
-        Hospital KPI Dashboard al;ksdjf;alskjf;alskjfal;kjf
-      </h1>
+      <h1>Hospital KPI Dashboard al;ksdjf;alskjf;alskjfal;kjf</h1>
       <HighchartsReact
         highcharts={Highcharts}
         options={options}
