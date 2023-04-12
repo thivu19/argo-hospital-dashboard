@@ -13,7 +13,7 @@ const options: Highcharts.Options = {
     text: 'Patient Wait Time'
   },
   xAxis: {
-    categories: ['2020/21', '2019/20', '2018/19', '2017/18', '2016/17']
+    categories: ['2022', '2021', '2020', '2019', '2018', '2017', '2016']
   },
   yAxis: {
     min: 0,
@@ -33,17 +33,13 @@ const options: Highcharts.Options = {
     }
   },
   series: [{
-    name: 'Cristiano Ronaldo',
+    name: 'New Patient',
     type: 'bar',
-    data: [4, 4, 6, 15, 12]
+    data: [4, 4, 4, 4, 6, 5, 6]
   }, {
-    name: 'Lionel Messi',
+    name: 'Hospital Patient',
     type: 'bar',
-    data: [5, 3, 12, 6, 11]
-  }, {
-    name: 'Robert Lewandowski',
-    type: 'bar',
-    data: [5, 15, 8, 5, 8]
+    data: [2, 3, 5, 3, 5, 6, 4]
   }]
 };
 
@@ -52,10 +48,10 @@ const Hospital: NextPageWithLayout = (props: HighchartsReact.Props) => {
 
   return (
     <section className="bg-gradient-to-r from-cyan-500 to-blue-500">
-      <h1>
-        Hospital KPI Dashboard al;ksdjf;alskjf;alskjfal;kjf
+      <h1 className="title">
+        Hospital KPI Dashboard
       </h1>
-      <HighchartsReact
+      <HighchartsReact className="stackedbar"
         highcharts={Highcharts}
         options={options}
         ref={chartComponentRef}
