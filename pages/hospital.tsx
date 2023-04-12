@@ -53,7 +53,7 @@ const Hospital: NextPageWithLayout = (props: HighchartsReact.Props) => {
   return (
     <section className="bg-gradient-to-r from-cyan-500 to-blue-500">
       <h1>
-        Hospital KPI Dashboard al;ksdjf;alskjf;alskjfal;kjf
+        Hospital KPI Dashboard
       </h1>
       <HighchartsReact
         highcharts={Highcharts}
