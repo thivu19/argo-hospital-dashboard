@@ -3,7 +3,12 @@ import HighchartsReact from 'highcharts-react-official';
 import { useRef } from 'react';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import SidebarLayout from '../components/layouts/sidebar/SidebarLayout';
+import acute from '../public/acute_data';
+import childbirth from '../public/childbirth_data';
 import { NextPageWithLayout } from './page';
+
+const acuteValues: number[] = acute.map((object) => object.Value);
+const childbirthValues: number[] = childbirth.map((object) => object.Value);
 
 const options: Highcharts.Options = {
   chart: {
@@ -51,6 +56,56 @@ const options: Highcharts.Options = {
   ],
 };
 
+const lengthOfStay: Highcharts.Options = {
+  chart: {
+    type: 'column',
+  },
+  title: {
+    text: 'Average Length of Stay',
+  },
+  subtitle: {
+    text: 'Source: data.world',
+  },
+  xAxis: {
+    type: 'datetime',
+    dateTimeLabelFormats: {
+      year: '%Y',
+    },
+    max: Date.UTC(2010, 11, 31),
+  },
+  yAxis: {
+    min: 0,
+    max: 10,
+    title: {
+      text: 'Length of Stay (days)',
+    },
+  },
+  plotOptions: {
+    series: {
+      pointStart: Date.UTC(1990, 0, 1),
+      pointInterval: 365 * 24 * 3600 * 1000, // One year in milliseconds
+
+      dataLabels: {
+        enabled: true,
+      },
+    },
+  },
+  series: [
+    {
+      name: 'Acute',
+      type: 'column',
+      color: '#7db249',
+      data: acuteValues,
+    },
+    {
+      name: 'Child Birth',
+      type: 'column',
+      color: '#faaa3a',
+      data: childbirthValues,
+    },
+  ],
+};
+
 const Hospital: NextPageWithLayout = (props: HighchartsReact.Props) => {
   const chartComponentRef = useRef<HighchartsReact.RefObject>(null);
 
@@ -60,6 +115,12 @@ const Hospital: NextPageWithLayout = (props: HighchartsReact.Props) => {
       <HighchartsReact
         highcharts={Highcharts}
         options={options}
+        ref={chartComponentRef}
+        {...props}
+      />
+      <HighchartsReact
+        highcharts={Highcharts}
+        options={lengthOfStay}
         ref={chartComponentRef}
         {...props}
       />
