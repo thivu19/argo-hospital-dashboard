@@ -1,6 +1,7 @@
 import * as Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { useRef } from 'react';
+import Header from '../components/Header/Header';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import SidebarLayout from '../components/layouts/sidebar/SidebarLayout';
 import { NextPageWithLayout } from './page';
@@ -47,7 +48,7 @@ const Hospital: NextPageWithLayout = (props: HighchartsReact.Props) => {
   const chartComponentRef = useRef<HighchartsReact.RefObject>(null);
 
   return (
-    <section className="bg-gradient-to-r from-cyan-500 to-blue-500">
+    <div className="bg-gradient-to-r from-cyan-500 to-blue-500">
       <h1 className="title">
         Hospital KPI Dashboard
       </h1>
@@ -55,9 +56,10 @@ const Hospital: NextPageWithLayout = (props: HighchartsReact.Props) => {
         highcharts={Highcharts}
         options={options}
         ref={chartComponentRef}
+        containerProps={{ style: { width: "200%", height: "100%" } }}
         {...props}
       />
-    </section>
+    </div>
   );
 };
 
@@ -65,9 +67,24 @@ export default Hospital;
 
 Hospital.getLayout = (page) => {
   return (
+    <section>
+      <div>
+        <Header>
+          BHCareChain
+        </Header>
+        <h1>test</h1>
+        <h1>test</h1>
+        <h1>test</h1>
+      </div>
+      
+    <div>
     <PrimaryLayout>
+      
       <SidebarLayout />
       {page}
     </PrimaryLayout>
+    </div>
+    </section>
+
   );
 };
