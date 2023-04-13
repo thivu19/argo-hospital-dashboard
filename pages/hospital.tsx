@@ -18,7 +18,7 @@ const options: Highcharts.Options = {
     text: 'Patient Wait Time',
   },
   xAxis: {
-    categories: ['2020/21', '2019/20', '2018/19', '2017/18', '2016/17'],
+    categories: ['2020/21', '2019/20', '2018/19', '2017/18', '2016/17']
   },
   yAxis: {
     min: 0,
@@ -37,73 +37,19 @@ const options: Highcharts.Options = {
       },
     },
   },
-  series: [
-    {
-      name: 'Cristiano Ronaldo',
-      type: 'bar',
-      data: [4, 4, 6, 15, 12],
-    },
-    {
-      name: 'Lionel Messi',
-      type: 'bar',
-      data: [5, 3, 12, 6, 11],
-    },
-    {
-      name: 'Robert Lewandowski',
-      type: 'bar',
-      data: [5, 15, 8, 5, 8],
-    },
-  ],
-};
-
-const lengthOfStay: Highcharts.Options = {
-  chart: {
-    type: 'column',
-  },
-  title: {
-    text: 'Average Length of Stay',
-  },
-  subtitle: {
-    text: 'Source: data.world',
-  },
-  xAxis: {
-    type: 'datetime',
-    dateTimeLabelFormats: {
-      year: '%Y',
-    },
-    max: Date.UTC(2010, 11, 31),
-  },
-  yAxis: {
-    min: 0,
-    max: 10,
-    title: {
-      text: 'Length of Stay (days)',
-    },
-  },
-  plotOptions: {
-    series: {
-      pointStart: Date.UTC(1990, 0, 1),
-      pointInterval: 365 * 24 * 3600 * 1000, // One year in milliseconds
-
-      dataLabels: {
-        enabled: true,
-      },
-    },
-  },
-  series: [
-    {
-      name: 'Acute',
-      type: 'column',
-      color: '#7db249',
-      data: acuteValues,
-    },
-    {
-      name: 'Child Birth',
-      type: 'column',
-      color: '#faaa3a',
-      data: childbirthValues,
-    },
-  ],
+  series: [{
+    name: 'Cristiano Ronaldo',
+    type: 'bar',
+    data: [4, 4, 6, 15, 12]
+  }, {
+    name: 'Lionel Messi',
+    type: 'bar',
+    data: [5, 3, 12, 6, 11]
+  }, {
+    name: 'Robert Lewandowski',
+    type: 'bar',
+    data: [5, 15, 8, 5, 8]
+  }]
 };
 
 const Hospital: NextPageWithLayout = (props: HighchartsReact.Props) => {
@@ -111,7 +57,9 @@ const Hospital: NextPageWithLayout = (props: HighchartsReact.Props) => {
 
   return (
     <section className="bg-gradient-to-r from-cyan-500 to-blue-500">
-      <h1>Hospital KPI Dashboard al;ksdjf;alskjf;alskjfal;kjf</h1>
+      <h1>
+        Hospital KPI Dashboard al;ksdjf;alskjf;alskjfal;kjf
+      </h1>
       <HighchartsReact
         highcharts={Highcharts}
         options={options}
