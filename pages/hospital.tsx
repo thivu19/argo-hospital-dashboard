@@ -1,6 +1,7 @@
 import * as Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { useRef } from 'react';
+import Header from '../components/Header/Header';
 import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import SidebarLayout from '../components/layouts/sidebar/SidebarLayout';
 import acute from '../public/acute_data';
@@ -112,9 +113,10 @@ const Hospital: NextPageWithLayout = (props: HighchartsReact.Props) => {
 
   return (
     <section className="bg-gradient-to-r from-cyan-500 to-blue-500">
-      <h1>Hospital KPI Dashboard al;ksdjf;alskjf;alskjfal;kjf</h1>
+      <h1 className="title">Hospital KPI Dashboard</h1>
       <div className={styles.display}>
         <HighchartsReact
+          className="stackedbar"
           highcharts={Highcharts}
           options={options}
           ref={chartComponentRef}
@@ -135,9 +137,20 @@ export default Hospital;
 
 Hospital.getLayout = (page) => {
   return (
-    <PrimaryLayout>
-      <SidebarLayout />
-      {page}
-    </PrimaryLayout>
+    <section>
+      <div>
+        <Header>BHCareChain</Header>
+        <h1>test</h1>
+        <h1>test</h1>
+        <h1>test</h1>
+      </div>
+
+      <div>
+        <PrimaryLayout>
+          <SidebarLayout />
+          {page}
+        </PrimaryLayout>
+      </div>
+    </section>
   );
 };
