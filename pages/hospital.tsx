@@ -5,6 +5,7 @@ import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import SidebarLayout from '../components/layouts/sidebar/SidebarLayout';
 import acute from '../public/acute_data';
 import childbirth from '../public/childbirth_data';
+import styles from '../styles/Hospital.module.css';
 import { NextPageWithLayout } from './page';
 
 const acuteValues: number[] = acute.map((object) => object.Value);
@@ -112,18 +113,20 @@ const Hospital: NextPageWithLayout = (props: HighchartsReact.Props) => {
   return (
     <section className="bg-gradient-to-r from-cyan-500 to-blue-500">
       <h1>Hospital KPI Dashboard al;ksdjf;alskjf;alskjfal;kjf</h1>
-      <HighchartsReact
-        highcharts={Highcharts}
-        options={options}
-        ref={chartComponentRef}
-        {...props}
-      />
-      <HighchartsReact
-        highcharts={Highcharts}
-        options={lengthOfStay}
-        ref={chartComponentRef}
-        {...props}
-      />
+      <div className={styles.display}>
+        <HighchartsReact
+          highcharts={Highcharts}
+          options={options}
+          ref={chartComponentRef}
+          {...props}
+        />
+        <HighchartsReact
+          highcharts={Highcharts}
+          options={lengthOfStay}
+          ref={chartComponentRef}
+          {...props}
+        />
+      </div>
     </section>
   );
 };
