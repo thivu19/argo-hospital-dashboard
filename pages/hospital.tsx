@@ -1,5 +1,6 @@
 import options from '@/components/HighCharts/barChart';
 import lengthOfStay from '@/components/HighCharts/columnChart';
+import cost from '@/components/HighCharts/radiusPieChart';
 import * as Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { useRef } from 'react';
@@ -14,7 +15,9 @@ const Hospital: NextPageWithLayout = (props: HighchartsReact.Props) => {
 
   return (
     <section className="bg-gradient-to-r from-cyan-500 to-blue-500">
-      <h1 className="title">Hospital KPI Dashboard</h1>
+      <h1 className="title">
+        Hospital KPI Dashboard
+      </h1>
       <div className={styles.display}>
         <HighchartsReact
           className="stackedbar"
@@ -26,6 +29,13 @@ const Hospital: NextPageWithLayout = (props: HighchartsReact.Props) => {
         <HighchartsReact
           highcharts={Highcharts}
           options={lengthOfStay}
+          ref={chartComponentRef}
+          {...props}
+        />
+        <HighchartsReact
+          className="radiusPieChart"
+          highcharts={Highcharts}
+          options={cost}
           ref={chartComponentRef}
           {...props}
         />
@@ -41,9 +51,9 @@ Hospital.getLayout = (page) => {
     <section>
       <div>
         <Header>BHCareChain</Header>
-        <h1>test</h1>
-        <h1>test</h1>
-        <h1>test</h1>
+        <br></br>
+        <br></br>
+        <br></br>
       </div>
 
       <div>
