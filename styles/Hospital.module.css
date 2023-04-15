@@ -8,3 +8,17 @@
 .chart {
   margin: 3rem;
 }
+
+.header {
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  color: #7B7B7B;
+  background-color: #D9D9D9;
+  border: 10px white;
+  border-radius: 10px;
+  margin: 20px;
+  font-size: 30px;
+}
