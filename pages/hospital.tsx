@@ -17,9 +17,8 @@ const Hospital: NextPageWithLayout = (props: HighchartsReact.Props) => {
 
   return (
     <Box className="bg-gradient-to-r from-cyan-500 to-blue-500">
-      <Typography className="title">Hospital KPI Dashboard</Typography>
+      <Typography className={styles.header}>Hospital KPI Dashboard</Typography>
       <Box className={styles.display}>
-        <Typography>Hospital KPI DashBoard</Typography>
         <Box className={styles.chart}>
           <HighchartsReact
             className="stackedbar"
