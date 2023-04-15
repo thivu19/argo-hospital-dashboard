@@ -1,21 +1,19 @@
 import * as Highcharts from 'highcharts';
-import acute from '../../public/acute_data';
-import childbirth from '../../public/childbirth_data';
 
-const acuteValues: number[] = acute.map((object) => object.Value);
-const childbirthValues: number[] = childbirth.map((object) => object.Value);
-
-const lengthOfStay: Highcharts.Options = {
+const mortalityRate: Highcharts.Options = {
   chart: {
-    type: 'line',
+    type: 'container',
   },
   title: {
-    text: 'Average Length of Stay',
+    text: 'Hospital Death Rate',
   },
   subtitle: {
-    text: 'Source: data.world',
+    text: 'Source: cdc.gov',
   },
   xAxis: {
+    title: {
+      text: 'Year',
+    },
     type: 'datetime',
     dateTimeLabelFormats: {
       year: '%Y',
@@ -26,13 +24,13 @@ const lengthOfStay: Highcharts.Options = {
     min: 0,
     max: 10,
     title: {
-      text: 'Length of Stay (days)',
+      text: 'Rate per 100 persons hospitalized',
     },
   },
   plotOptions: {
     series: {
-      pointStart: Date.UTC(1990, 0, 1),
-      pointInterval: 365 * 24 * 3600 * 1000, // One year in milliseconds
+      pointStart: Date.UTC(2000, 0, 1),
+      pointInterval: 365 * 24 * 3600 * 1000 * 5, // One year in milliseconds
 
       dataLabels: {
         enabled: true,
@@ -41,18 +39,46 @@ const lengthOfStay: Highcharts.Options = {
   },
   series: [
     {
-      name: 'Acute',
+      name: 'Respitaroy Failure',
       type: 'line',
-      color: '#7db249',
-      data: acuteValues,
+      data: [25.3, 19.3, 16.5],
     },
     {
-      name: 'Child Birth',
+      name: 'Pneumonitis',
       type: 'line',
-      color: '#faaa3a',
-      data: childbirthValues,
+      data: [17.4, 15.2, 13.6],
+    },
+    {
+      name: 'Septicemia',
+      type: 'line',
+      data: [13.9, 19.3, 16.3],
+    },
+    {
+      name: 'Kidney disease',
+      type: 'line',
+      data: [9.9, 6.5, 3.5],
+    },
+    {
+      name: 'Cancer',
+      type: 'line',
+      data: [8.1, 6.8, 4.4],
+    },
+    {
+      name: 'Stroke',
+      type: 'line',
+      data: [6.4, 6.5, 4.7],
+    },
+    {
+      name: 'Pneumonia',
+      type: 'line',
+      data: [4.9, 3.3, 3.3],
+    },
+    {
+      name: 'Heart disease',
+      type: 'line',
+      data: [3.7, 2.8, 3.1],
     },
   ],
 };
 
-export default lengthOfStay;
+export default mortalityRate;

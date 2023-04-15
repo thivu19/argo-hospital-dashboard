@@ -1,5 +1,6 @@
 import options from '@/components/HighCharts/barChart';
-import lengthOfStay from '@/components/HighCharts/lineChart';
+import lengthOfStay from '@/components/HighCharts/containerChart';
+import mortalityRate from '@/components/HighCharts/lineChart';
 import cost from '@/components/HighCharts/radiusPieChart';
 import { AppBar, Box, Typography } from '@mui/material';
 import * as Highcharts from 'highcharts';
@@ -10,6 +11,7 @@ import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import SidebarLayout from '../components/layouts/sidebar/SidebarLayout';
 import styles from '../styles/Hospital.module.css';
 import { NextPageWithLayout } from './page';
+
 const Hospital: NextPageWithLayout = (props: HighchartsReact.Props) => {
   const chartComponentRef = useRef<HighchartsReact.RefObject>(null);
 
@@ -17,6 +19,7 @@ const Hospital: NextPageWithLayout = (props: HighchartsReact.Props) => {
     <Box className="bg-gradient-to-r from-cyan-500 to-blue-500">
       <Typography className="title">Hospital KPI Dashboard</Typography>
       <Box className={styles.display}>
+        <Typography>Hospital KPI DashBoard</Typography>
         <Box className={styles.chart}>
           <HighchartsReact
             className="stackedbar"
@@ -39,6 +42,15 @@ const Hospital: NextPageWithLayout = (props: HighchartsReact.Props) => {
             className="radiusPieChart"
             highcharts={Highcharts}
             options={cost}
+            ref={chartComponentRef}
+            {...props}
+          />
+        </Box>
+        <Box className={styles.chart}>
+          <HighchartsReact
+            className="radiusPieChart"
+            highcharts={Highcharts}
+            options={mortalityRate}
             ref={chartComponentRef}
             {...props}
           />
