@@ -1,6 +1,7 @@
 import options from '@/components/HighCharts/barChart';
-import lengthOfStay from '@/components/HighCharts/columnChart';
+import lengthOfStay from '@/components/HighCharts/lineChart';
 import cost from '@/components/HighCharts/radiusPieChart';
+import { AppBar, Box, Typography } from '@mui/material';
 import * as Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { useRef } from 'react';
@@ -9,38 +10,41 @@ import PrimaryLayout from '../components/layouts/primary/PrimaryLayout';
 import SidebarLayout from '../components/layouts/sidebar/SidebarLayout';
 import styles from '../styles/Hospital.module.css';
 import { NextPageWithLayout } from './page';
-
 const Hospital: NextPageWithLayout = (props: HighchartsReact.Props) => {
   const chartComponentRef = useRef<HighchartsReact.RefObject>(null);
 
   return (
-    <section className="bg-gradient-to-r from-cyan-500 to-blue-500">
-      <h1 className="title">
-        Hospital KPI Dashboard
-      </h1>
-      <div className={styles.display}>
-        <HighchartsReact
-          className="stackedbar"
-          highcharts={Highcharts}
-          options={options}
-          ref={chartComponentRef}
-          {...props}
-        />
-        <HighchartsReact
-          highcharts={Highcharts}
-          options={lengthOfStay}
-          ref={chartComponentRef}
-          {...props}
-        />
-        <HighchartsReact
-          className="radiusPieChart"
-          highcharts={Highcharts}
-          options={cost}
-          ref={chartComponentRef}
-          {...props}
-        />
-      </div>
-    </section>
+    <Box className="bg-gradient-to-r from-cyan-500 to-blue-500">
+      <Typography className="title">Hospital KPI Dashboard</Typography>
+      <Box className={styles.display}>
+        <Box className={styles.chart}>
+          <HighchartsReact
+            className="stackedbar"
+            highcharts={Highcharts}
+            options={options}
+            ref={chartComponentRef}
+            {...props}
+          />
+        </Box>
+        <Box className={styles.chart}>
+          <HighchartsReact
+            highcharts={Highcharts}
+            options={lengthOfStay}
+            ref={chartComponentRef}
+            {...props}
+          />
+        </Box>
+        <Box className={styles.chart}>
+          <HighchartsReact
+            className="radiusPieChart"
+            highcharts={Highcharts}
+            options={cost}
+            ref={chartComponentRef}
+            {...props}
+          />
+        </Box>
+      </Box>
+    </Box>
   );
 };
 
@@ -48,20 +52,24 @@ export default Hospital;
 
 Hospital.getLayout = (page) => {
   return (
-    <section>
-      <div>
-        <Header>BHCareChain</Header>
+    <Box>
+      <Box>
+        <AppBar>
+          <Typography>
+            <Header>BHCareChain</Header>
+          </Typography>
+        </AppBar>
         <br></br>
         <br></br>
         <br></br>
-      </div>
+      </Box>
 
-      <div>
+      <Box>
         <PrimaryLayout>
           <SidebarLayout />
           {page}
         </PrimaryLayout>
-      </div>
-    </section>
+      </Box>
+    </Box>
   );
 };

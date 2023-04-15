@@ -7,7 +7,7 @@ const childbirthValues: number[] = childbirth.map((object) => object.Value);
 
 const lengthOfStay: Highcharts.Options = {
   chart: {
-    type: 'column',
+    type: 'line',
   },
   title: {
     text: 'Average Length of Stay',
@@ -42,13 +42,13 @@ const lengthOfStay: Highcharts.Options = {
   series: [
     {
       name: 'Acute',
-      type: 'column',
+      type: 'line',
       color: '#7db249',
       data: acuteValues,
     },
     {
       name: 'Child Birth',
-      type: 'column',
+      type: 'line',
       color: '#faaa3a',
       data: childbirthValues,
     },

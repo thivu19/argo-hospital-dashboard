@@ -1,4 +1,10 @@
 .display {
-  display: flex;
-  padding: 2rem;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.chart {
+  margin: 3rem;
 }
